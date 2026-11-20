@@ -1,1 +1,159 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101d38">
+<title>Vai Precisar?</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{background:#f3f5f9;color:#17233b}
+header{background:#101d38;color:white;padding:18px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:24px;font-weight:bold}
+.logo span{color:#ff8a00}
+button{cursor:pointer;border:0;border-radius:8px;padding:13px;font-weight:bold}
+.menu{background:#101d38;color:white;font-size:22px}
+nav{display:none;background:#172744;padding:15px}
+nav.open{display:grid;gap:15px}
+nav a{color:white;text-decoration:none}
+.hero{background:#101d38;color:white;text-align:center;padding:45px 20px}
+.hero h1{font-size:32px;margin-bottom:15px}
+.hero span{color:#ff8a00}
+.hero p{line-height:1.6;margin-bottom:20px}
+.container{max-width:850px;margin:auto;padding:20px}
+.btn{display:block;text-align:center;padding:15px;border-radius:8px;text-decoration:none;font-weight:bold;margin:10px 0}
+.orange{background:#ff8a00;color:white}
+.blue{background:#172744;color:white}
+.white{background:white;color:#172744}
+h2{margin:15px 0}
+input,select,textarea{width:100%;padding:14px;margin:8px 0;border:1px solid #ccd3df;border-radius:8px;font-size:16px;background:white}
+textarea{min-height:90px}
+.categories{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:15px 0}
+.category{background:white;border:1px solid #ddd;border-radius:10px;padding:17px 8px;text-align:center;cursor:pointer}
+.category span{display:block;font-size:27px;margin-bottom:8px}
+.card{background:white;padding:18px;border-radius:12px;margin:20px 0}
+footer{background:#101d38;color:white;text-align:center;padding:25px;margin-top:30px}
+@media(min-width:600px){.categories{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">Vai <span>Precisar?</span></div>
+<button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+</header>
+
+<nav>
+<a href="#inicio">Início</a>
+<a href="#servicos">Encontrar serviços</a>
+<a href="#prestador">Sou prestador</a>
+<a href="#cliente">Preciso de serviço</a>
+</nav>
+
+<section class="hero" id="inicio">
+<h1>Precisou? <span>Vai Precisar!</span></h1>
+<p>Encontre profissionais e empresas.<br>
+Divulgue seus serviços e conquiste clientes.</p>
+<a class="btn orange" href="#servicos">Encontrar serviços</a>
+<a class="btn white" href="#prestador">Quero oferecer serviços</a>
+</section>
+
+<main class="container">
+
+<section id="servicos">
+<h2>Encontre um serviço</h2>
+<input id="busca" placeholder="Digite o serviço..." oninput="buscar()">
+
+<div class="categories">
+<div class="category">📹<span>Câmeras e CFTV</span></div>
+<div class="category">💡<span>Eletricista</span></div>
+<div class="category">🔧<span>Encanador</span></div>
+<div class="category">🚪<span>Portões e motores</span></div>
+<div class="category">🚨<span>Alarmes</span></div>
+<div class="category">🧹<span>Limpeza</span></div>
+<div class="category">🏗️<span>Construção</span></div>
+<div class="category">🎨<span>Pintura</span></div>
+<div class="category">🌳<span>Jardinagem</span></div>
+<div class="category">💻<span>Informática</span></div>
+<div class="category">❄️<span>Ar-condicionado</span></div>
+<div class="category">🛠️<span>Outros serviços</span></div>
+</div>
+</section>
+
+<section class="card" id="prestador">
+<h2>Sou prestador de serviços</h2>
+<p>Quero divulgar meu trabalho.</p>
+<form id="formPrestador">
+<input name="nome" placeholder="Nome completo" required>
+<input name="telefone" placeholder="WhatsApp" required>
+<input name="cidade" placeholder="Cidade e estado" required>
+<select name="servico" required>
+<option value="">Escolha seu serviço</option>
+<option>Câmeras e CFTV</option>
+<option>Eletricista</option>
+<option>Encanador</option>
+<option>Portões e motores</option>
+<option>Alarmes</option>
+<option>Limpeza</option>
+<option>Construção</option>
+<option>Outros</option>
+</select>
+<textarea name="descricao" placeholder="Descreva seus serviços"></textarea>
+<button class="orange">Cadastrar interesse</button>
+</form>
+</section>
+
+<section class="card" id="cliente">
+<h2>Preciso de um serviço</h2>
+<form id="formCliente">
+<input name="nome" placeholder="Seu nome" required>
+<input name="cidade" placeholder="Sua cidade" required>
+<select name="servico" required>
+<option value="">Qual serviço precisa?</option>
+<option>Câmeras e segurança</option>
+<option>Eletricista</option>
+<option>Encanador</option>
+<option>Portões e motores</option>
+<option>Limpeza</option>
+<option>Construção</option>
+<option>Outros</option>
+</select>
+<textarea name="descricao" placeholder="Conte o que você precisa" required></textarea>
+<button class="blue">Enviar solicitação</button>
+</form>
+</section>
+
+</main>
+
+<footer>
+<h3>Vai Precisar?</h3>
+<p>Conectando quem precisa com quem sabe fazer.</p>
+<p>© 2026 - Todos os direitos reservados.</p>
+</footer>
+
+<script>
+function buscar(){
+let termo=document.getElementById('busca').value.toLowerCase();
+document.querySelectorAll('.category').forEach(item=>{
+item.style.display=item.innerText.toLowerCase().includes(termo)?'block':'none';
+});
+}
+
+function enviar(id,tipo){
+document.getElementById(id).addEventListener('submit',function(e){
+e.preventDefault();
+let dados=Object.fromEntries(new FormData(this).entries());
+alert(tipo+' preenchido com sucesso!\\n\\n'+
+Object.entries(dados).map(([k,v])=>k+': '+v).join('\\n')+
+'\\n\\nEsta versão ainda não salva os dados no servidor.');
+this.reset();
+});
+}
+enviar('formPrestador','Cadastro de prestador');
+enviar('formCliente','Solicitação de serviço');
+</script>
+
+</body>
+</html>
+
